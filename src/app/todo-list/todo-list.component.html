@@ -1,0 +1,12 @@
+<div class="container ">
+
+    <label for="newTodo">
+        Add new Todo</label>
+    <input type="text" id="newTodo" #todoName name="newTodo" class="form-control"/>
+    
+    <button type="button" (click)="addTodo(todoName.value)" class="btn btn-primary">Add todo</button>
+    
+    <ol *ngIf="todos.length" class="list-group list-group-numbered">
+        <li *ngFor="let todo of todos" class="list-group-item p-3 m-2"> <input type="checkbox" class="form-check-input" [checked]=todo.isComplited (change)="handleChangeStatus(true)" /> {{todo.name}}</li> 
+    </ol>
+</div>
